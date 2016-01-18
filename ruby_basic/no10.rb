@@ -3,5 +3,5 @@ def average(array)
 	array.each do |number|
 		sum += number
 	end
-	return sum / array.length
+	sum / array.length
 end

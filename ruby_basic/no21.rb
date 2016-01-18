@@ -1,11 +1,11 @@
 def if_overlap(array)
-	array.sort!
+	sorted_array = array.sort
 
 	# Initialize the previous value with number
 	# smaller than the first value by 1.
-	prev_value = array[0] - 1
+	prev_value = sorted_array[0] - 1
 
-	array.each do |next_value|
+	sorted_array.each do |next_value|
 		if prev_value == next_value
 			# Overlap found
 			return true

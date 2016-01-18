@@ -3,5 +3,5 @@ def sum(array)
 	array.each do |number|
 		sum += number
 	end
-	return sum
+	sum
 end

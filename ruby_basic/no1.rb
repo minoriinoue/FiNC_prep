@@ -1,9 +1,9 @@
 number = 10
 
 if number > 10
-	puts "large"
+  puts "large"
 elsif number == 10
-	puts "eq"
+  puts "eq"
 else
-	puts "small"
+  puts "small"
 end

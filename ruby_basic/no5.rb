@@ -1,12 +1,8 @@
 number_row = 4
 
-i = 1
-while i <= number_row do
-	l = 1
-	while l <= i do
-		print "*"
-		l += 1
-	end
-	print "\n"
-	i += 1
+1.upto(number_row) do |i|
+  1.upto(i) do |l|
+    print "*"
+  end
+  print "\n"
 end
