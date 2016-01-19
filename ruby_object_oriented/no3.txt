@@ -1,0 +1,17 @@
+3-1.
+	index
+	show
+	update
+	all
+	find
+	update
+
+3-2.
+	Project class:
+		all, find, update
+	ProjectController:
+		index, show, update
+
+3-3.
+	Because class Project inherits methods from
+	ActiveRecord::Base.
