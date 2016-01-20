@@ -1,0 +1,14 @@
+Rake:
+Rake is a build tool written in Ruby.
+rake db:migrate, for example, executes migration file
+to reflect the model to the actual database.
+
+DSL:
+Domain-specific language
+A language made and used specifically to a certain task.
+For example, SQL is a language specifically used for
+accessing and handling with database.
+
+General-purpose programming language:
+A language for a variety of use contrary to DSL.
+ex. C, Java ...

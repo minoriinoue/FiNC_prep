@@ -1,0 +1,17 @@
+rake db:migrate
+	To execute migration to database using migration file.
+
+rake db:create
+	To create database from yml file.
+
+rake db:migrate:reset
+	To delet database and make database. Execute db:migrate
+
+rake db:drop
+	To delete database
+
+rake -T
+	To show all the commands with rake.
+
+rake routes
+	To confirm rooting based on migration file.
