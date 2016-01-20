@@ -1,0 +1,5 @@
+1 MVC method's merit
+	- Clarify the division of labor. -> Improve the efficiency.
+
+3. The reason logics should not be written in view
+	- Decrease the division of labor. -> Decrease the efficiency.
