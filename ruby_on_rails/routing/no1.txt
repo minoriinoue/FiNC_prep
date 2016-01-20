@@ -1,0 +1,13 @@
+resources:
+Automatically create RESTful URLs.
+
+collection:
+Add an action and respective URL.
+The URL created by this method does not have to specify the id of the data.
+
+member:
+Same as collection. But the URL created by this method has to specify
+the id of the data.
+
+namespace:
+Specify the top path of an url.
