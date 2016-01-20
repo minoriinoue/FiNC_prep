@@ -1,0 +1,19 @@
+List of comments [GET]
+ - URL: /comments
+ - action: index
+
+Create a new article [GET]
+ - URL: /articles/new
+ - action: new
+
+Create a new article [POST]
+ - URL: /articles
+ - action: create
+ 
+Details of a user [GET]
+ - URL: /users/id
+ - action: show
+ 
+Delete an article [DELETE]
+ - URL: /articles/id
+ - action: destroy

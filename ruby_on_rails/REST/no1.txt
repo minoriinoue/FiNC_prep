@@ -1,0 +1,9 @@
+url              action   http method  role
+/users           index    GET          show the list of users
+/users           create   POST         add a user to db
+/users/new       new      GET          have someone to input data of a new user
+/users/:id/edit  edit     GET          have someone to edit data of a user
+/users/:id       show     GET          show a page about a user
+/users/:id       update   PATCH        edit a part of the information of a user
+/users/:id       update   PUT          update the information of a user
+/users/:id       destroy  DELETE       delete the data of a user
