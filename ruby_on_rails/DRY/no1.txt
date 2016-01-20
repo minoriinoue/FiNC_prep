@@ -1,0 +1,4 @@
+DRY: Don't repeat yourself.
+DRY is an idea that you'd better not write the same code at different places
+to decrease the possibility of overlooking to syncronize one of the code in
+changing it.
