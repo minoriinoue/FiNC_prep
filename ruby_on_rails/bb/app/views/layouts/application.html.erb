@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bb</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<% if user_signed_in? || admin_signed_in? %>
+  <body>
+    <%= yield %>
+  </body>
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.name %></strong><br />
+    <%= link_to 'Edit Account', edit_user_registration_path, :class => 'navbar-link' %><br />
+    <%= link_to 'Log out', destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+  <% else %>
+    Logged in as <strong><%= current_admin.name %></strong><br />
+    <%= link_to 'Edit Account', edit_admin_registration_path, :class => 'navbar-link' %>
+    <%= link_to 'Log out', destroy_admin_session_path, method: :delete, :class => 'navbar-link' %>
+  <% end %>
+<% else %>
+    <p>Welcome</p>
+  <body>
+  <%= yield %>
+  </body>
+  <div>
+    <p>Log in as user</p>
+    <%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-link' %><br />
+    <%= link_to  'Log in', new_user_session_path, :class =>  'navbar-link' %><br />
+  </div>
+  <div>
+    <p>Log in as Admin</p>
+    <%= link_to 'Sign up', new_admin_registration_path, :class => 'navbar-link' %><br />
+    <%= link_to  'Log in', new_admin_session_path, :class =>  'navbar-link' %><br />
+  </div>
+<% end %>
+</html>
