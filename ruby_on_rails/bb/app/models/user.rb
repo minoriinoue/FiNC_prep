@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
   has_many :my_threads, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+
+  default_scope { order(updated_at: :desc) }
+
+  #after_destroy do
+  #  Follow.where(followee_id: params[:id]).destroy_all
+  #  Follow.where(follower_id: params[:id]).destroy_all
+  #end
 end

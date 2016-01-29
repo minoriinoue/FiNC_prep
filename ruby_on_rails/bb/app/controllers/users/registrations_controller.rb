@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # When shows new page, leave the boxes blank by
     # setting an empty User, User.new.
     @resource = User.new
-    @resource_name = 'user'
   end
 
   # POST /resource

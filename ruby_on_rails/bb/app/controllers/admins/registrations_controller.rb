@@ -7,10 +7,9 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
   def new
-    # When shows new page, leave the boxes blank by
-    # setting an empty User, User.new.
+  #  # When shows new page, leave the boxes blank by
+  #  # setting an empty User, User.new.
     @resource = Admin.new
-    @resource_name = 'admin'
   end
 
   # POST /resource

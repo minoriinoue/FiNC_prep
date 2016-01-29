@@ -7,10 +7,6 @@
   <%= f.submit "Comment"%>
 <% end %>
 
-<% if @message.present? %>
-    <p><%= @message %></p>
-<% end %>
-
 <% if @comments.count != 0 %>
 <table>
   <thead>

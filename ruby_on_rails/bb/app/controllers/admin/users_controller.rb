@@ -13,12 +13,9 @@ class Admin::UsersController < Admin::BaseController
     if User.find(params[:id]).destroy
       Follow.where(followee_id: params[:id]).destroy_all
       Follow.where(follower_id: params[:id]).destroy_all
-      @message = 'Succeeded in deleting a user.'
-      @users = User.all
-      render :index
+      redirect_to admin_users_url, notice: 'Succeeded in deleting a user.'
     else
-      @message = 'Failed to delete a user.'
-      render :index
+      redirect_to admin_users_url, notice: 'Failed to delete a user.'
     end
   end
 end

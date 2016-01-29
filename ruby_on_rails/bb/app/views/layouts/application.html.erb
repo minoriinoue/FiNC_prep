@@ -9,6 +9,9 @@
 
 <% if user_signed_in? || admin_signed_in? %>
   <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
     <%= yield %>
   </body>
   <% if user_signed_in? %>
