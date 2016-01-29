@@ -46,7 +46,7 @@ class FollowsController < UserBaseController
   # Thus, follower_id is always the id of current_user. This method id used
   # in create and destroy.
   def fetch_user_and_followings
-    @user = User.find(follow_params[:followee_id])
-    @follow = Follow.find_by(follower_id: current_user.id, followee_id: follow_params[:followee_id])
+    @user = User.find(params[:followee_id])
+    @follow = Follow.find_by(follower_id: current_user.id, followee_id: params[:followee_id])
   end
 end
