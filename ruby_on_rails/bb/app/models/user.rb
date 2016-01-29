@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
 
   default_scope { order(updated_at: :desc) }
 
-  #after_destroy do
-  #  Follow.where(followee_id: params[:id]).destroy_all
-  #  Follow.where(follower_id: params[:id]).destroy_all
-  #end
+  after_destroy do
+    Follow.where(followee_id: self.id).destroy_all
+    Follow.where(follower_id: self.id).destroy_all
+  end
 end
