@@ -2,9 +2,9 @@ class ThreadsController < UserBaseController
   def index
     if params[:status].present?
       following_user_id = Follow.where(follower_id: current_user.id).pluck(:followee_id)
-      @threads = MyThread.where(user_id: following_user_id).includes(:user).order('updated_at DESC')
+      @threads = MyThread.where(user_id: following_user_id).includes(:user)
     else
-      @threads = MyThread.includes(:user).order('updated_at DESC')
+      @threads = MyThread.includes(:user)
     end
   end
 
@@ -18,10 +18,10 @@ class ThreadsController < UserBaseController
     @thread = MyThread.new(user_params)
     if @thread.save
       @thread = MyThread.new
-      @message = "Successfully created a new thread"
+      flash[:notice] = 'Successfully created a new thread.'
       render :new
     else
-      @message = "Could not create a new thread"
+      flash[:alert] = 'Could not create a new thread.'
       render :new
     end
   end
@@ -41,10 +41,10 @@ class ThreadsController < UserBaseController
     end
 
     if @thread.save
-      @message = 'Successfully updated.'
+      flash[:notice] = 'Successfully updated.'
       render :edit
     else
-      @message = 'Failed to update.'
+      flash[:alert] = 'Failed to update.'
       render :edit
     end
   end
@@ -52,17 +52,17 @@ class ThreadsController < UserBaseController
   def destroy
     if current_user.id == MyThread.find(params[:id]).user_id
       if MyThread.find(params[:id]).destroy
-        @message = 'Successfully deleted a thread.'
-        @threads = MyThread.includes(:user).order('updated_at DESC')
+        flash[:notice] = 'Successfully deleted a thread.'
+        @threads = MyThread.includes(:user)
         render :index
       else
-        @message = 'Failed to delete a thread.'
-        @threads = MyThread.includes(:user).order('updated_at DESC')
+        flash[:alert] = 'Failed to delete a thread.'
+        @threads = MyThread.includes(:user)
         render :index
       end
     else
-      @message = 'Failed to delete a thread.'
-      @threads = MyThread.includes(:user).order('updated_at DESC')
+      flash[:alert] = 'You are not authorized to delete a thread.'
+      @threads = MyThread.includes(:user)
       render :index
     end
   end
