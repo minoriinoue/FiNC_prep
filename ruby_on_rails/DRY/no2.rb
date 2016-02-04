@@ -1,7 +1,5 @@
 class BookController < ApplicationController
 
-  before_action :find_book, only: [:show, :edit, :update, :destroy]
-  
   def find_book
     @book = Book.find(params[:id])
   end
@@ -29,12 +27,15 @@ class BookController < ApplicationController
   end
 
   def update
-    book.update(params[:book].permit(:title, :author))
+    @book.update(params[:book].permit(:title, :author))
     redirect_to root_path
   end
 
   def destroy
-    book.destroy
+    @book.destroy
     redirect_to root_path
   end
+
+  private 
+  before_action :find_book, only: [:show, :edit, :update, :destroy]
 end
